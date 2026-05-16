@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mystic Grills - Menu & Reservations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .header {
+            background-color: #ff6347;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #e5533d;
+        }
+        .hidden-section {
+            display: none;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .menu-category {
+            margin-bottom: 30px;
+        }
+        .menu-category h2 {
+            color: #ff6347;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: scale(1.02);
+            background-color: #f9f9f9;
+        }
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .menu-text {
+            flex: 1;
+        }
+        .menu-text h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .menu-text p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .menu-text strong {
+            color: #ff6347;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #ff6347;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        form label {
+            font-size: 18px;
+            color: #333;
+        }
+        form input, form select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .reservation-confirmation {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .reservation-confirmation h2 {
+            color: #ff6347;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">The Mystic Grills - Menu & Reservations</div>
+    
+    <div class="button-container">
+        <button class="button" onclick="showSection('food-menu')">Food Menu</button>
+        <button class="button" onclick="showSection('reservation-form')">Reserve a Table</button>
+    </div>
+    
+    <div id="food-menu" class="hidden-section">
+        <h2>Our Delicious Menu</h2>
+        
+        <div class="menu-category">
+            <h2>Starters</h2>
+            <h3>Vegetarian</h3>
+            <div class="menu-item">
+                <img src="samosa.jpg" alt="Samosa">
+                <div class="menu-text">
+                    <h3>Samosa</h3>
+                    <p>Crispy fried pastry filled with spiced potatoes</p>
+                    <p><strong>Rs.90</strong></p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="paneer_tikka.jpg" alt="Paneer Tikka">
+                <div class="menu-text">
+                    <h3>Paneer Tikka</h3>
+                    <p>Grilled cottage cheese marinated with spices</p>
+                    <p><strong>Rs.189</strong></p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Baby corn 65.jpg" alt="Baby corn 65">
+                <div class="menu-text">
+                    <h3>Baby corn 65</h3>
+                    <p>Crispy golden fried baby corns</p>
+                    <p><strong>Rs.149</strong></p>
+                </div>
+            </div>
+ <h3>Non-Vegetarian</h3>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Chicken Tikka">
+                    <div class="menu-text">
+                        <h3>Chicken Tikka</h3>
+                        <p>Grilled chicken marinated with spices</p>
+                        <p><strong>Rs.195</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Tandoori Chicken">
+                    <div class="menu-text">
+                        <h3>Tandoori Chicken</h3>
+                        <p>Chicken marinated in yogurt and spices, cooked in a tandoor</p>
+                        <p><strong>Rs.229</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Breads</h2>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Garlic Naan">
+                    <div class="menu-text">
+                        <h3>Garlic Naan</h3>
+                        <p>Soft Indian bread topped with garlic butter</p>
+                        <p><strong>Rs.69</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Butter Roti">
+                    <div class="menu-text">
+                        <h3>Butter Roti</h3>
+                        <p>Whole wheat flatbread with butter</p>
+                        <p><strong>Rs.35</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Main Course</h2>
+                <h3>Vegetarian</h3>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Paneer Butter Masala">
+                    <div class="menu-text">
+                        <h3>Paneer Butter Masala</h3>
+                        <p>Cottage cheese cooked in rich, creamy tomato gravy</p>
+                        <p><strong>Rs.179</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Veg Pulao">
+                    <div class="menu-text">
+                        <h3>Veg Pulao</h3>
+                        <p>Aromatic rice cooked with mixed vegetables and mild spices</p>
+                        <p><strong>Rs.199</strong></p>
+                    </div>
+                </div>
+                <h3>Non-Vegetarian</h3>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Chicken Biryani">
+                    <div class="menu-text">
+                        <h3>Chicken Biryani</h3>
+                        <p>Aromatic basmati rice cooked with spices and tender chicken</p>
+                        <p><strong>Rs.249</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Mutton Mughlai Biryani">
+                    <div class="menu-text">
+                        <h3>Mutton Mughlai Biryani</h3>
+                        <p>Succulent mutton cooked with aromatic spices and basmati rice</p>
+                        <p><strong>Rs.389</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Beverages</h2>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Lassi">
+                    <div class="menu-text">
+                        <h3>Lassi</h3>
+                        <p>Traditional yogurt-based drink, sweet or salted</p>
+                        <p><strong>Rs.79</strong></p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/100" alt="Masala Chai">
+                    <div class="menu-text">
+                        <h3>Masala Chai</h3>
+                        <p>Spiced Indian tea with milk</p>
+                        <p><strong>Rs.39</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Specials</h2>
+                <div class="menu-item">
+                    <div class="menu-text">
+                        <h3>Biryani & Blaze</h3>
+                        <p>Exclusive at our restaurant! Try our special signature dish.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-text">
+                        <h3>Royal Mutton Feast</h3>
+                        <p>Exclusive at our restaurant! Try our special signature dish.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-text">
+                        <h3>Mughlai Magic</h3>
+                        <p>Exclusive at our restaurant! Try our special signature dish.</p>
+                    </div>
+                </div>
+            </div>
+        </div>       
+     </div>
+    <div id="reservation-form" class="hidden-section">
+        <h2>Reserve a Table</h2>
+        <form id="reservationForm">
+            <label>Table Number:</label>
+            <select id="table-number">
+                <option value="1">Table 1</option>
+                <option value="2">Table 2</option>
+                <option value="3">Table 3</option>
+            </select>
+            <label>Number of Persons:</label>
+            <input id="number-of-persons" type="number" min="1" max="6" placeholder="Enter number of persons">
+            <label>Date:</label>
+            <input id="reservation-date" type="date">
+            <label>Time:</label>
+            <input id="reservation-time" type="time">
+            <button type="button" class="button" onclick="reserveTable()">Reserve</button>
+        </form>
+        <div id="reservation-confirmation" class="reservation-confirmation">
+            <h2>Reservation Confirmed!</h2>
+            <p>Table: <span id="confirmed-table"></span></p>
+            <p>Number of Persons: <span id="confirmed-persons"></span></p>
+            <p>Date: <span id="confirmed-date"></span></p>
+            <p>Time: <span id="confirmed-time"></span></p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        &copy; 2023 The Mystic Grills. All rights reserved.
+    </div>
+    
+    <script>
+        var reservedTables = [];
+
+        function showSection(sectionId) {
+            document.getElementById('food-menu').style.display = 'none';
+            document.getElementById('reservation-form').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        
+        function reserveTable() {
+            var table = document.getElementById("table-number").value;
+            var persons = document.getElementById("number-of-persons").value;
+            var date = document.getElementById("reservation-date").value;
+            var time = document.getElementById("reservation-time").value;
+
+            if (persons > 6) {
+                alert("Table can hold up to 6 persons only!");
+                return;
+            }
+            
+            if (reservedTables.includes(table)) {
+                alert("This table has been reserved!");
+                return;
+            }
+            
+            reservedTables.push(table);
+            document.getElementById("confirmed-table").textContent = table;
+            document.getElementById("confirmed-persons").textContent = persons;
+            document.getElementById("confirmed-date").textContent = date;
+            document.getElementById("confirmed-time").textContent = time;
+            document.getElementById("reservation-confirmation").style.display = "block";
+            updateTableOptions();
+        }
+
+        function updateTableOptions() {
+            var select = document.getElementById("table-number");
+            for (var i = 0; i < select.options.length; i++) {
+                if (reservedTables.includes(select.options[i].value)) {
+                    select.options[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

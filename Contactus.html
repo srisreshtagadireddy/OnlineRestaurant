@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Mystic Grills</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8e4d3, #f3c995);
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #3B2F2F;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        header img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        header h1 {
+            color: #FFCC66;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #3B2F2F;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+            color: #663300;
+            text-align: left;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #FF9900;
+            box-shadow: 0px 0px 8px rgba(255, 153, 0, 0.5);
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #FF9900, #FF6600);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #FF6600, #CC4400);
+            transform: scale(1.05);
+        }
+        .contact-details {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .contact-details p {
+            font-size: 16px;
+            color: #444;
+        }
+        .contact-details strong {
+            color: #663300;
+        }
+        .map-container {
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+            border-radius: 8px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #663300;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out;
+        }
+        .social-icons a:hover {
+            color: #FF6600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Logo.jpg" alt="Restaurant Logo">  
+        <h1>The Mystic Grills</h1>
+    </header>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form onsubmit="showThankYou(event)">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-details">
+            <h2>📍 Visit Us</h2>
+            <p><strong>Address:</strong>Vadlamudi, Guntur District, Andhra Pradesh, 522213</p>
+            <p><strong>Phone:</strong> 7455961111</p>
+            <p><strong>Email:</strong> infomysticgrills@gmail.com</p>
+            <p><strong>Opening Hours:</strong> Mon-Sat: 10:00 AM - 10:00 PM | Sun: Closed</p>
+        </div>
+
+        <div class="map-container">
+<iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.207635302178!2d80.5245!3d16.2348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a771b8e6b9e8f%3A0x1f9e2e19b06b9a9a!2sVadlamudi%2C%20Andhra%20Pradesh%20522213!5e0!3m2!1sen!2sin!4v1709830400000"
+            allowfullscreen="">
+        </iframe>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/mysticgrills" target="_blank">🌐 Facebook</a>
+            <a href="https://www.instagram.com/mysticgrills" target="_blank">📷 Instagram</a>
+            <a href="https://twitter.com/mysticgrills" target="_blank">🐦 Twitter</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Food Review Feedback</h2>
+        <form onsubmit="showThankYou(event)">
+            <label for="food-item">Food Item</label>
+            <input type="text" id="food-item" name="food-item" required>
+
+            <label for="rating">Rating</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select a Rating</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+
+            <label for="review">Your Review</label>
+            <textarea id="review" name="review" rows="5" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>
